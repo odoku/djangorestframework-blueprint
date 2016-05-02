@@ -66,7 +66,6 @@ TYPE_MAP = {
 }
 
 
-# TODO: FilterField は widget を見て判断する
 def get_raw_type(field):
     if isinstance(field, SerialzierField):
         return get_raw_type_from_serializer_field(field)

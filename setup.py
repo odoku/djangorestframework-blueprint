@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
+from setuptools import find_packages, setup
 
 
 setup(
@@ -11,13 +11,14 @@ setup(
     author_email='masashi.onogawa@wamw.jp',
     keywords='django,api,rest,apiblueprint',
     url='http://github.com/odoku/djangorestframework-blueprint',
+    license='MIT',
 
-    packages=[
-        'rest_framework_blueprint',
-        'rest_framework_blueprint.management',
-        'rest_framework_blueprint.templates',
-        'rest_framework_blueprint.templatetags',
-    ],
+    packages=find_packages(exclude=[
+        'testapp',
+        'tests',
+    ]),
+    include_package_data=True,
+
     install_requires=[
         'Django>=1.9.5',
         'django-filter>=0.13.0',
